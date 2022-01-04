@@ -1,0 +1,27 @@
+create a class to store and manipulate a point in 3cd space (x,y,z)
+
+need
+
+point3d.h
+point3d.cpp
+main.cpp
+
+submit as tar
+
+class should be called point3d
+type double
+
+all data private
+
+public functions
+default constructor sets to 000
+parametrized constructor in which the user specifies thei initial coordinates
+getter which return each of the coordinates
+setters sets each of the coordinates
+shift takes three parameters x y z and shifts the point by that amount
+shift takes a single point3d parameter and shifts the point by that amount (overloaded function)
+scale takes a double and multiplies each coordinate by that value
+
+include overloads for +,=<< as nonmember functions
+
+include a testing program (test.cpp?)
