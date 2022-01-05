@@ -23,5 +23,5 @@ shift takes a single point3d parameter and shifts the point by that amount (over
 scale takes a double and multiplies each coordinate by that value
 
 include overloads for +,=<< as nonmember functions
-
+(SHOULD THIS USE == ????)
 include a testing program (test.cpp?)
