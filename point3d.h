@@ -9,6 +9,13 @@ namespace CMPT276{
     class point3d{
 
         private:
+
+            //variables:
+            double x;
+            double y;
+            double z;
+
+        public:
             //Constructors:
             point3d();
             point3d(double, double, double);
@@ -25,18 +32,13 @@ namespace CMPT276{
 
             // possible assignment operator 
             point3d operator=(const point3d&);
-        public:
-            //variables:
-            double x;
-            double y;
-            double z;
+
 
     }; 
 
     //nonmember functions:
     point3d operator+(const point3d&, const point3d&);
-    bool operator == (const point3d&, const point3d&);
-    point3d operator,(const point3d&, const point3d&);
+    bool operator == ( point3d&,  point3d&);
     std::istream& operator >> (std::istream&, point3d&);
 
 

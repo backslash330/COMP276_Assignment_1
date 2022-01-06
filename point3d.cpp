@@ -29,11 +29,11 @@ double point3d::readOut(char selection){
     // Return the selected coordinate
     switch(selection){
         case 'x':
-            return x;
+            return this->x;
         case 'y':
-            return y;
+            return this->y;
         case 'z':
-            return z;
+            return this->z;
         default:
             return 0;
     }
@@ -72,25 +72,31 @@ point3d point3d::scale(double scalar) {
 }
 
 point3d operator +(const point3d& p1, const point3d& p2){
-    //return the sum of two points
+    // combine the two point3ds and return a new point 3d
     double xSum, ySum, zSum;
-    // WHAT IS ADDITION SUPPOSED TO DO?
+    xSum = p1.x + p2.x;
+    ySum = p1.y + p2.y;
+    zSum = p1.z + p2.Z;
+    point sum(xSum,ySum,zSum);
+    return sum;
 }
 
-bool operator ==(const point3d& p1, const point3d& p2){
+bool operator ==( point3d& p1,  point3d& p2){
     //return true if two points are equal
-    if(p1.x == p2.x && p1.y == p2.y && p1.z == p2.z){
+    double p1X, p1Y, p1Z, p2X, p2Y, p2Z;
+    p1X = p1.readOut('x');
+    p1Y = p1.readOut('y');
+    p1Z = p1.readOut('z');
+    p2X = p2.readOut('x');
+    p2Y = p2.readOut('y');
+    p2Z = p2.readOut('z');
+    if(p1X == p2X && p1Y == p2Y && p1Z == p2Z){
         return true;
     }
     else{
         return false;
     }
-}
 
-point3d operator ,(const point3d& p1, const point3d& p2){
-    //return the cross product of two points
-    double xSum, ySum, zSum;
-    // WHAT IS COMMA SUPPOSED TO DO?
 }
 
 istream& operator >>(istream& in, point3d& p){
