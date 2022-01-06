@@ -28,10 +28,6 @@ Namespace and definition for the point3d class
             point3d shift (const point3d&);
             point3d scale (double);
 
-
-            // possible assignment operator 
-            point3d operator=(const point3d&);
-
             //friend functions:
             friend std::istream& operator >> (std::istream&, point3d&);
             
