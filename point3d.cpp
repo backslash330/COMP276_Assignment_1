@@ -2,7 +2,6 @@
 Impliments the Point3D class
 */
 #include "point3d.h"
-using namespace CMPT276;
 using namespace std;
 
 point3d::point3d() {
@@ -25,7 +24,7 @@ point3d::point3d(double x, double y, double z) {
     return;
 }
 
-double point3d::readOut(char selection){
+double point3d::readOut(char selection) const {
     // Return the selected coordinate
     switch(selection){
         case 'x':
@@ -74,14 +73,22 @@ point3d point3d::scale(double scalar) {
 point3d operator +(const point3d& p1, const point3d& p2){
     // combine the two point3ds and return a new point 3d
     double xSum, ySum, zSum;
-    xSum = p1.x + p2.x;
-    ySum = p1.y + p2.y;
-    zSum = p1.z + p2.Z;
-    point sum(xSum,ySum,zSum);
+    double p1x, p1y, p1z;
+    double p2x, p2y, p2z;
+    p1x = p1.readOut('x');
+    p1y = p1.readOut('y');
+    p1z = p1.readOut('z');
+    p2x = p2.readOut('x');
+    p2y = p2.readOut('y');
+    p2z = p2.readOut('z');
+    xSum = p1x + p2x;
+    ySum = p1y + p2y;
+    zSum = p1z + p2z;
+    point3d sum(xSum, ySum, zSum);
     return sum;
 }
 
-bool operator ==( point3d& p1,  point3d& p2){
+bool operator ==(const point3d& p1,const point3d& p2){
     //return true if two points are equal
     double p1X, p1Y, p1Z, p2X, p2Y, p2Z;
     p1X = p1.readOut('x');
@@ -99,9 +106,9 @@ bool operator ==( point3d& p1,  point3d& p2){
 
 }
 
-istream& operator >>(istream& in, point3d& p){
+istream& operator >>(istream& ins, point3d& target){
     //read in a point from a stream
-    in >> p.x >> p.y >> p.z;
-    return in;
+    ins >> target.x >> target.y >> target.z;
+    return ins;
 }
 

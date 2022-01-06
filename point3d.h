@@ -5,7 +5,6 @@ Namespace and definition for the point3d class
 */
 #include <iostream>
 
-namespace CMPT276{
     class point3d{
 
         private:
@@ -21,7 +20,7 @@ namespace CMPT276{
             point3d(double, double, double);
 
             //Getters:
-            double readOut (char);
+            double readOut (char) const;
 
             //Mutators:
             point3d set (double, double, double);
@@ -33,14 +32,16 @@ namespace CMPT276{
             // possible assignment operator 
             point3d operator=(const point3d&);
 
+            //friend functions:
+            friend std::istream& operator >> (std::istream&, point3d&);
+            
+
 
     }; 
 
     //nonmember functions:
-    point3d operator+(const point3d&, const point3d&);
-    bool operator == ( point3d&,  point3d&);
-    std::istream& operator >> (std::istream&, point3d&);
+    point3d operator + (const point3d&, const point3d&);
+    bool operator == (const point3d&,const point3d&);
 
 
     
-}
