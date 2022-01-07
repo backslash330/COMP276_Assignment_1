@@ -6,8 +6,8 @@ using namespace std;
 
 point3d::point3d() {
     // Default constructor
-
-    // Initialize the point to (0,0,0)
+    // PRECONIDITION: None
+    // POSTCONIDITION: Create a new point3d object with default values
     x = 0;
     y = 0;
     z = 0;
@@ -15,9 +15,8 @@ point3d::point3d() {
 }
 
 point3d::point3d(double x, double y, double z) {
-    // Constructor
-
-    // Initialize the point to (x,y,z)
+    // PRECONIDITION: None
+    // POSTCONIDITION: Create a new point3d object with the given values
     this->x = x;
     this->y = y;
     this->z = z;
@@ -25,7 +24,8 @@ point3d::point3d(double x, double y, double z) {
 }
 
 double point3d::readOut(char selection) const {
-    // Return the selected coordinate
+    // PRECONIDITION: selection must be either 'x', 'y', or 'z'
+    // POSTCONIDITION: Return the selected coordinate or 0 if invalid
     switch(selection){
         case 'x':
             return this->x;
@@ -39,7 +39,8 @@ double point3d::readOut(char selection) const {
 }
 
 point3d point3d::set(double x, double y, double z) {
-    // Set the point to (x,y,z)
+    // PRECONDITION: user must give positive double values for x, y, and z
+    // POSTCONDITION: Set the point to the given values 
     this->x = x;
     this->y = y;
     this->z = z;
@@ -47,7 +48,8 @@ point3d point3d::set(double x, double y, double z) {
 }
 
 point3d point3d::shift(double x, double y, double z) {
-    // Shift the point by (x,y,z)
+    // PRECONIDITION: user must give positive double values for x, y, and z
+    // POSTCONDITION: Shift the point by the given values
     this->x += x;
     this->y += y;
     this->z += z;
@@ -55,7 +57,8 @@ point3d point3d::shift(double x, double y, double z) {
 }
 
 point3d point3d::shift(const point3d& other) {
-    // Shift the point by other
+    // PRECONIDITION: user must give a valid point3d object
+    // POSTCONDITION: Shift the point by the given values
     this->x += other.x;
     this->y += other.y;
     this->z += other.z;
@@ -63,7 +66,8 @@ point3d point3d::shift(const point3d& other) {
 }
 
 point3d point3d::scale(double scalar) {
-    // Scale the point by (x,y,z)
+    // PRECONIDITION: user must give a positive double value for scalar
+    // POSTCONDITION: Scale the point by the given value
     this->x *= scalar;
     this->y *= scalar;
     this->z *= scalar;
@@ -71,7 +75,8 @@ point3d point3d::scale(double scalar) {
 }
 
 point3d operator +(const point3d& p1, const point3d& p2){
-    // combine the two point3ds and return a new point 3d
+    // Precondition: p1 and p2 are valid point3d objects
+    // Postcondition: Return a new point3d object with the sum of the two points
     double xSum, ySum, zSum;
     double p1x, p1y, p1z;
     double p2x, p2y, p2z;
@@ -89,7 +94,8 @@ point3d operator +(const point3d& p1, const point3d& p2){
 }
 
 bool operator ==(const point3d& p1,const point3d& p2){
-    //return true if two points are equal
+    // Precondition: p1 and p2 are valid point3d objects
+    // Postcondition: Return true if the two points are equal
     double p1X, p1Y, p1Z, p2X, p2Y, p2Z;
     p1X = p1.readOut('x');
     p1Y = p1.readOut('y');
@@ -107,7 +113,8 @@ bool operator ==(const point3d& p1,const point3d& p2){
 }
 
 istream& operator >>(istream& ins, point3d& target){
-    //read in a point from a stream
+    // Precondition: user gives a valid input stream and a valid point3d object
+    // Postcondition: Read in the x, y, and z values from the input stream and set the target point to those values
     ins >> target.x >> target.y >> target.z;
     return ins;
 }
