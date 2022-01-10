@@ -29,11 +29,11 @@ Namespace and definition for the point3d class
 
             //Mutators:
             point3d set (double, double, double);
-            // PRECONDITION: user must give positive double values for x, y, and z
+            // PRECONDITION: user must give double values for x, y, and z
             // POSTCONDITION: Set the point to the given values 
             
             point3d shift (double, double, double);
-            // PRECONIDITION: user must give positive double values for x, y, and z
+            // PRECONIDITION: user must give double values for x, y, and z
              // POSTCONDITION: Shift the point by the given values
             
             point3d shift (const point3d&);
@@ -41,7 +41,7 @@ Namespace and definition for the point3d class
             // POSTCONDITION: Shift the point by the given values
 
             point3d scale (double);
-            // PRECONIDITION: user must give a positive double value for scalar
+            // PRECONIDITION: user must give a double value for scalar
             // POSTCONDITION: Scale the point by the given value
 
             //friend functions:

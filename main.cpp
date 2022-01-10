@@ -17,18 +17,18 @@ int main(){
     cout << endl;
 
     // Constructor test
-    point3d p2(1,2,3);
+    point3d p2(-1.54,0,3.912348239293);
     cout << "Constructor test: " << endl;
-    cout << "point3d p2(1,2,3);" << endl;
+    cout << "point3d p2(-1.54,0,3.912348239293);" << endl;
     cout << "x: " << p2.readOut('x') << endl;
     cout << "y: " << p2.readOut('y') << endl;
     cout << "z: " << p2.readOut('z') << endl;
     cout << endl;
 
     //setter test
-    p2.set(4,5,6);
+    p2.set(0,3.912348239293,-1);
     cout << "setter test: " << endl;
-    cout << "points set to (4,5,6): " << endl;
+    cout << "points set to (0,3.912348239293,-1): " << endl;
     cout << "x: " << p2.readOut('x') << endl;
     cout << "y: " << p2.readOut('y') << endl;
     cout << "z: " << p2.readOut('z') << endl;
@@ -53,11 +53,11 @@ int main(){
     cout << endl;
 
     //addition test
-    point3d p3(1,2,3);
-    point3d p4(4,5,6);
+    point3d p3(-1.111,-10.,3);
+    point3d p4(-40.222,10,6);
     point3d p5 = p3 + p4;
     cout << "addition test: " << endl;
-    cout << "p3(1,2,3) + p4(4,5,6): " << endl;
+    cout << "p3(-1.111,-10.,3) + p4(-40.222,10,6): " << endl;
     cout << "x: " << p5.readOut('x') << endl;
     cout << "y: " << p5.readOut('y') << endl;
     cout << "z: " << p5.readOut('z') << endl;

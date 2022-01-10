@@ -39,7 +39,7 @@ double point3d::readOut(char selection) const {
 }
 
 point3d point3d::set(double x, double y, double z) {
-    // PRECONDITION: user must give positive double values for x, y, and z
+    // PRECONDITION: user must give double values for x, y, and z
     // POSTCONDITION: Set the point to the given values 
     this->x = x;
     this->y = y;
@@ -48,7 +48,7 @@ point3d point3d::set(double x, double y, double z) {
 }
 
 point3d point3d::shift(double x, double y, double z) {
-    // PRECONIDITION: user must give positive double values for x, y, and z
+    // PRECONIDITION: user must give double values for x, y, and z
     // POSTCONDITION: Shift the point by the given values
     this->x += x;
     this->y += y;
@@ -66,7 +66,7 @@ point3d point3d::shift(const point3d& other) {
 }
 
 point3d point3d::scale(double scalar) {
-    // PRECONIDITION: user must give a positive double value for scalar
+    // PRECONIDITION: user must give a double value for scalar
     // POSTCONDITION: Scale the point by the given value
     this->x *= scalar;
     this->y *= scalar;
